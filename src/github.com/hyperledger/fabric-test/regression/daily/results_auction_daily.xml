@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?><testsuite errors="9" failures="0" name="pytest" skips="0" tests="9" time="0.444"><testcase classname="testAuctionChaincode.ChaincodeAPI" file="testAuctionChaincode.py" line="58" name="test_FAB3934_1_Create_Channel" time="0.0737261772156"><error message="test setup failure">cls = &lt;class &apos;testAuctionChaincode.ChaincodeAPI&apos;&gt;
+
+    @classmethod
+    def setUpClass(cls):
+        cls.CHANNEL_NAME = &apos;channel&apos;
+        cls.CHANNELS = &apos;2&apos;
+        cls.CHAINCODES = &apos;1&apos;
+        cls.ENDORSERS = &apos;4&apos;
+        cls.RUN_TIME_HOURS = &apos;1&apos;
+&gt;       check_output([&apos;./generateCfgTrx.sh {0} {1}&apos;.format(cls.CHANNEL_NAME, cls.CHANNELS)], cwd=&apos;../../envsetup&apos;, shell=True)
+
+testAuctionChaincode.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+popenargs = ([&apos;./generateCfgTrx.sh channel 2&apos;],), kwargs = {&apos;cwd&apos;: &apos;../../envsetup&apos;, &apos;shell&apos;: True}, process = &lt;subprocess.Popen object at 0x1097a61d0&gt;, output = &apos;&apos;
+unused_err = None, retcode = 1, cmd = [&apos;./generateCfgTrx.sh channel 2&apos;]
+
+    def check_output(*popenargs, **kwargs):
+        r&quot;&quot;&quot;Run command with arguments and return its output as a byte string.
+    
+        If the exit code was non-zero it raises a CalledProcessError.  The
+        CalledProcessError object will have the return code in the returncode
+        attribute and output in the output attribute.
+    
+        The arguments are the same as for the Popen constructor.  Example:
+    
+        &gt;&gt;&gt; check_output([&quot;ls&quot;, &quot;-l&quot;, &quot;/dev/null&quot;])
+        &apos;crw-rw-rw- 1 root root 1, 3 Oct 18  2007 /dev/null\n&apos;
+    
+        The stdout argument is not allowed as it is used internally.
+        To capture standard error in the result, use stderr=STDOUT.
+    
+        &gt;&gt;&gt; check_output([&quot;/bin/sh&quot;, &quot;-c&quot;,
+        ...               &quot;ls -l non_existent_file ; exit 0&quot;],
+        ...              stderr=STDOUT)
+        &apos;ls: non_existent_file: No such file or directory\n&apos;
+        &quot;&quot;&quot;
+        if &apos;stdout&apos; in kwargs:
+            raise ValueError(&apos;stdout argument not allowed, it will be overridden.&apos;)
+        process = Popen(stdout=PIPE, *popenargs, **kwargs)
+        output, unused_err = process.communicate()
+        retcode = process.poll()
+        if retcode:
+            cmd = kwargs.get(&quot;args&quot;)
+            if cmd is None:
+                cmd = popenargs[0]
+&gt;           raise CalledProcessError(retcode, cmd, output=output)
+E           CalledProcessError: Command &apos;[&apos;./generateCfgTrx.sh channel 2&apos;]&apos; returned non-zero exit status 1
+
+/Users/chalene/anaconda/envs/fabric/lib/python2.7/subprocess.py:219: CalledProcessError</error><system-err>sed: 1: &quot;base/peer-base.yaml&quot;: undefined label &apos;ase/peer-base.yaml&apos;
+</system-err></testcase><testcase classname="testAuctionChaincode.ChaincodeAPI" file="testAuctionChaincode.py" line="68" name="test_FAB3934_2_Join_Channel" time="0.000331163406372"><error message="test setup failure">cls = &lt;class &apos;testAuctionChaincode.ChaincodeAPI&apos;&gt;
+
+    @classmethod
+    def setUpClass(cls):
+        cls.CHANNEL_NAME = &apos;channel&apos;
+        cls.CHANNELS = &apos;2&apos;
+        cls.CHAINCODES = &apos;1&apos;
+        cls.ENDORSERS = &apos;4&apos;
+        cls.RUN_TIME_HOURS = &apos;1&apos;
+&gt;       check_output([&apos;./generateCfgTrx.sh {0} {1}&apos;.format(cls.CHANNEL_NAME, cls.CHANNELS)], cwd=&apos;../../envsetup&apos;, shell=True)
+
+testAuctionChaincode.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+popenargs = ([&apos;./generateCfgTrx.sh channel 2&apos;],), kwargs = {&apos;cwd&apos;: &apos;../../envsetup&apos;, &apos;shell&apos;: True}, process = &lt;subprocess.Popen object at 0x1097a61d0&gt;, output = &apos;&apos;
+unused_err = None, retcode = 1, cmd = [&apos;./generateCfgTrx.sh channel 2&apos;]
+
+    def check_output(*popenargs, **kwargs):
+        r&quot;&quot;&quot;Run command with arguments and return its output as a byte string.
+    
+        If the exit code was non-zero it raises a CalledProcessError.  The
+        CalledProcessError object will have the return code in the returncode
+        attribute and output in the output attribute.
+    
+        The arguments are the same as for the Popen constructor.  Example:
+    
+        &gt;&gt;&gt; check_output([&quot;ls&quot;, &quot;-l&quot;, &quot;/dev/null&quot;])
+        &apos;crw-rw-rw- 1 root root 1, 3 Oct 18  2007 /dev/null\n&apos;
+    
+        The stdout argument is not allowed as it is used internally.
+        To capture standard error in the result, use stderr=STDOUT.
+    
+        &gt;&gt;&gt; check_output([&quot;/bin/sh&quot;, &quot;-c&quot;,
+        ...               &quot;ls -l non_existent_file ; exit 0&quot;],
+        ...              stderr=STDOUT)
+        &apos;ls: non_existent_file: No such file or directory\n&apos;
+        &quot;&quot;&quot;
+        if &apos;stdout&apos; in kwargs:
+            raise ValueError(&apos;stdout argument not allowed, it will be overridden.&apos;)
+        process = Popen(stdout=PIPE, *popenargs, **kwargs)
+        output, unused_err = process.communicate()
+        retcode = process.poll()
+        if retcode:
+            cmd = kwargs.get(&quot;args&quot;)
+            if cmd is None:
+                cmd = popenargs[0]
+&gt;           raise CalledProcessError(retcode, cmd, output=output)
+E           CalledProcessError: Command &apos;[&apos;./generateCfgTrx.sh channel 2&apos;]&apos; returned non-zero exit status 1
+
+/Users/chalene/anaconda/envs/fabric/lib/python2.7/subprocess.py:219: CalledProcessError</error></testcase><testcase classname="testAuctionChaincode.ChaincodeAPI" file="testAuctionChaincode.py" line="78" name="test_FAB3934_3_Install_Chaincode" time="0.000318765640259"><error message="test setup failure">cls = &lt;class &apos;testAuctionChaincode.ChaincodeAPI&apos;&gt;
+
+    @classmethod
+    def setUpClass(cls):
+        cls.CHANNEL_NAME = &apos;channel&apos;
+        cls.CHANNELS = &apos;2&apos;
+        cls.CHAINCODES = &apos;1&apos;
+        cls.ENDORSERS = &apos;4&apos;
+        cls.RUN_TIME_HOURS = &apos;1&apos;
+&gt;       check_output([&apos;./generateCfgTrx.sh {0} {1}&apos;.format(cls.CHANNEL_NAME, cls.CHANNELS)], cwd=&apos;../../envsetup&apos;, shell=True)
+
+testAuctionChaincode.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+popenargs = ([&apos;./generateCfgTrx.sh channel 2&apos;],), kwargs = {&apos;cwd&apos;: &apos;../../envsetup&apos;, &apos;shell&apos;: True}, process = &lt;subprocess.Popen object at 0x1097a61d0&gt;, output = &apos;&apos;
+unused_err = None, retcode = 1, cmd = [&apos;./generateCfgTrx.sh channel 2&apos;]
+
+    def check_output(*popenargs, **kwargs):
+        r&quot;&quot;&quot;Run command with arguments and return its output as a byte string.
+    
+        If the exit code was non-zero it raises a CalledProcessError.  The
+        CalledProcessError object will have the return code in the returncode
+        attribute and output in the output attribute.
+    
+        The arguments are the same as for the Popen constructor.  Example:
+    
+        &gt;&gt;&gt; check_output([&quot;ls&quot;, &quot;-l&quot;, &quot;/dev/null&quot;])
+        &apos;crw-rw-rw- 1 root root 1, 3 Oct 18  2007 /dev/null\n&apos;
+    
+        The stdout argument is not allowed as it is used internally.
+        To capture standard error in the result, use stderr=STDOUT.
+    
+        &gt;&gt;&gt; check_output([&quot;/bin/sh&quot;, &quot;-c&quot;,
+        ...               &quot;ls -l non_existent_file ; exit 0&quot;],
+        ...              stderr=STDOUT)
+        &apos;ls: non_existent_file: No such file or directory\n&apos;
+        &quot;&quot;&quot;
+        if &apos;stdout&apos; in kwargs:
+            raise ValueError(&apos;stdout argument not allowed, it will be overridden.&apos;)
+        process = Popen(stdout=PIPE, *popenargs, **kwargs)
+        output, unused_err = process.communicate()
+        retcode = process.poll()
+        if retcode:
+            cmd = kwargs.get(&quot;args&quot;)
+            if cmd is None:
+                cmd = popenargs[0]
+&gt;           raise CalledProcessError(retcode, cmd, output=output)
+E           CalledProcessError: Command &apos;[&apos;./generateCfgTrx.sh channel 2&apos;]&apos; returned non-zero exit status 1
+
+/Users/chalene/anaconda/envs/fabric/lib/python2.7/subprocess.py:219: CalledProcessError</error></testcase><testcase classname="testAuctionChaincode.ChaincodeAPI" file="testAuctionChaincode.py" line="88" name="test_FAB3934_4_Instantiate_Chaincode" time="0.000318050384521"><error message="test setup failure">cls = &lt;class &apos;testAuctionChaincode.ChaincodeAPI&apos;&gt;
+
+    @classmethod
+    def setUpClass(cls):
+        cls.CHANNEL_NAME = &apos;channel&apos;
+        cls.CHANNELS = &apos;2&apos;
+        cls.CHAINCODES = &apos;1&apos;
+        cls.ENDORSERS = &apos;4&apos;
+        cls.RUN_TIME_HOURS = &apos;1&apos;
+&gt;       check_output([&apos;./generateCfgTrx.sh {0} {1}&apos;.format(cls.CHANNEL_NAME, cls.CHANNELS)], cwd=&apos;../../envsetup&apos;, shell=True)
+
+testAuctionChaincode.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+popenargs = ([&apos;./generateCfgTrx.sh channel 2&apos;],), kwargs = {&apos;cwd&apos;: &apos;../../envsetup&apos;, &apos;shell&apos;: True}, process = &lt;subprocess.Popen object at 0x1097a61d0&gt;, output = &apos;&apos;
+unused_err = None, retcode = 1, cmd = [&apos;./generateCfgTrx.sh channel 2&apos;]
+
+    def check_output(*popenargs, **kwargs):
+        r&quot;&quot;&quot;Run command with arguments and return its output as a byte string.
+    
+        If the exit code was non-zero it raises a CalledProcessError.  The
+        CalledProcessError object will have the return code in the returncode
+        attribute and output in the output attribute.
+    
+        The arguments are the same as for the Popen constructor.  Example:
+    
+        &gt;&gt;&gt; check_output([&quot;ls&quot;, &quot;-l&quot;, &quot;/dev/null&quot;])
+        &apos;crw-rw-rw- 1 root root 1, 3 Oct 18  2007 /dev/null\n&apos;
+    
+        The stdout argument is not allowed as it is used internally.
+        To capture standard error in the result, use stderr=STDOUT.
+    
+        &gt;&gt;&gt; check_output([&quot;/bin/sh&quot;, &quot;-c&quot;,
+        ...               &quot;ls -l non_existent_file ; exit 0&quot;],
+        ...              stderr=STDOUT)
+        &apos;ls: non_existent_file: No such file or directory\n&apos;
+        &quot;&quot;&quot;
+        if &apos;stdout&apos; in kwargs:
+            raise ValueError(&apos;stdout argument not allowed, it will be overridden.&apos;)
+        process = Popen(stdout=PIPE, *popenargs, **kwargs)
+        output, unused_err = process.communicate()
+        retcode = process.poll()
+        if retcode:
+            cmd = kwargs.get(&quot;args&quot;)
+            if cmd is None:
+                cmd = popenargs[0]
+&gt;           raise CalledProcessError(retcode, cmd, output=output)
+E           CalledProcessError: Command &apos;[&apos;./generateCfgTrx.sh channel 2&apos;]&apos; returned non-zero exit status 1
+
+/Users/chalene/anaconda/envs/fabric/lib/python2.7/subprocess.py:219: CalledProcessError</error></testcase><testcase classname="testAuctionChaincode.ChaincodeAPI" file="testAuctionChaincode.py" line="98" name="test_FAB3934_5_Post_Users" time="0.000250816345215"><error message="test setup failure">cls = &lt;class &apos;testAuctionChaincode.ChaincodeAPI&apos;&gt;
+
+    @classmethod
+    def setUpClass(cls):
+        cls.CHANNEL_NAME = &apos;channel&apos;
+        cls.CHANNELS = &apos;2&apos;
+        cls.CHAINCODES = &apos;1&apos;
+        cls.ENDORSERS = &apos;4&apos;
+        cls.RUN_TIME_HOURS = &apos;1&apos;
+&gt;       check_output([&apos;./generateCfgTrx.sh {0} {1}&apos;.format(cls.CHANNEL_NAME, cls.CHANNELS)], cwd=&apos;../../envsetup&apos;, shell=True)
+
+testAuctionChaincode.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+popenargs = ([&apos;./generateCfgTrx.sh channel 2&apos;],), kwargs = {&apos;cwd&apos;: &apos;../../envsetup&apos;, &apos;shell&apos;: True}, process = &lt;subprocess.Popen object at 0x1097a61d0&gt;, output = &apos;&apos;
+unused_err = None, retcode = 1, cmd = [&apos;./generateCfgTrx.sh channel 2&apos;]
+
+    def check_output(*popenargs, **kwargs):
+        r&quot;&quot;&quot;Run command with arguments and return its output as a byte string.
+    
+        If the exit code was non-zero it raises a CalledProcessError.  The
+        CalledProcessError object will have the return code in the returncode
+        attribute and output in the output attribute.
+    
+        The arguments are the same as for the Popen constructor.  Example:
+    
+        &gt;&gt;&gt; check_output([&quot;ls&quot;, &quot;-l&quot;, &quot;/dev/null&quot;])
+        &apos;crw-rw-rw- 1 root root 1, 3 Oct 18  2007 /dev/null\n&apos;
+    
+        The stdout argument is not allowed as it is used internally.
+        To capture standard error in the result, use stderr=STDOUT.
+    
+        &gt;&gt;&gt; check_output([&quot;/bin/sh&quot;, &quot;-c&quot;,
+        ...               &quot;ls -l non_existent_file ; exit 0&quot;],
+        ...              stderr=STDOUT)
+        &apos;ls: non_existent_file: No such file or directory\n&apos;
+        &quot;&quot;&quot;
+        if &apos;stdout&apos; in kwargs:
+            raise ValueError(&apos;stdout argument not allowed, it will be overridden.&apos;)
+        process = Popen(stdout=PIPE, *popenargs, **kwargs)
+        output, unused_err = process.communicate()
+        retcode = process.poll()
+        if retcode:
+            cmd = kwargs.get(&quot;args&quot;)
+            if cmd is None:
+                cmd = popenargs[0]
+&gt;           raise CalledProcessError(retcode, cmd, output=output)
+E           CalledProcessError: Command &apos;[&apos;./generateCfgTrx.sh channel 2&apos;]&apos; returned non-zero exit status 1
+
+/Users/chalene/anaconda/envs/fabric/lib/python2.7/subprocess.py:219: CalledProcessError</error></testcase><testcase classname="testAuctionChaincode.ChaincodeAPI" file="testAuctionChaincode.py" line="108" name="test_FAB3934_6_Get_Users" time="0.000342130661011"><error message="test setup failure">cls = &lt;class &apos;testAuctionChaincode.ChaincodeAPI&apos;&gt;
+
+    @classmethod
+    def setUpClass(cls):
+        cls.CHANNEL_NAME = &apos;channel&apos;
+        cls.CHANNELS = &apos;2&apos;
+        cls.CHAINCODES = &apos;1&apos;
+        cls.ENDORSERS = &apos;4&apos;
+        cls.RUN_TIME_HOURS = &apos;1&apos;
+&gt;       check_output([&apos;./generateCfgTrx.sh {0} {1}&apos;.format(cls.CHANNEL_NAME, cls.CHANNELS)], cwd=&apos;../../envsetup&apos;, shell=True)
+
+testAuctionChaincode.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+popenargs = ([&apos;./generateCfgTrx.sh channel 2&apos;],), kwargs = {&apos;cwd&apos;: &apos;../../envsetup&apos;, &apos;shell&apos;: True}, process = &lt;subprocess.Popen object at 0x1097a61d0&gt;, output = &apos;&apos;
+unused_err = None, retcode = 1, cmd = [&apos;./generateCfgTrx.sh channel 2&apos;]
+
+    def check_output(*popenargs, **kwargs):
+        r&quot;&quot;&quot;Run command with arguments and return its output as a byte string.
+    
+        If the exit code was non-zero it raises a CalledProcessError.  The
+        CalledProcessError object will have the return code in the returncode
+        attribute and output in the output attribute.
+    
+        The arguments are the same as for the Popen constructor.  Example:
+    
+        &gt;&gt;&gt; check_output([&quot;ls&quot;, &quot;-l&quot;, &quot;/dev/null&quot;])
+        &apos;crw-rw-rw- 1 root root 1, 3 Oct 18  2007 /dev/null\n&apos;
+    
+        The stdout argument is not allowed as it is used internally.
+        To capture standard error in the result, use stderr=STDOUT.
+    
+        &gt;&gt;&gt; check_output([&quot;/bin/sh&quot;, &quot;-c&quot;,
+        ...               &quot;ls -l non_existent_file ; exit 0&quot;],
+        ...              stderr=STDOUT)
+        &apos;ls: non_existent_file: No such file or directory\n&apos;
+        &quot;&quot;&quot;
+        if &apos;stdout&apos; in kwargs:
+            raise ValueError(&apos;stdout argument not allowed, it will be overridden.&apos;)
+        process = Popen(stdout=PIPE, *popenargs, **kwargs)
+        output, unused_err = process.communicate()
+        retcode = process.poll()
+        if retcode:
+            cmd = kwargs.get(&quot;args&quot;)
+            if cmd is None:
+                cmd = popenargs[0]
+&gt;           raise CalledProcessError(retcode, cmd, output=output)
+E           CalledProcessError: Command &apos;[&apos;./generateCfgTrx.sh channel 2&apos;]&apos; returned non-zero exit status 1
+
+/Users/chalene/anaconda/envs/fabric/lib/python2.7/subprocess.py:219: CalledProcessError</error></testcase><testcase classname="testAuctionChaincode.ChaincodeAPI" file="testAuctionChaincode.py" line="117" name="test_FAB3934_7_Download_Images" time="0.000312089920044"><error message="test setup failure">cls = &lt;class &apos;testAuctionChaincode.ChaincodeAPI&apos;&gt;
+
+    @classmethod
+    def setUpClass(cls):
+        cls.CHANNEL_NAME = &apos;channel&apos;
+        cls.CHANNELS = &apos;2&apos;
+        cls.CHAINCODES = &apos;1&apos;
+        cls.ENDORSERS = &apos;4&apos;
+        cls.RUN_TIME_HOURS = &apos;1&apos;
+&gt;       check_output([&apos;./generateCfgTrx.sh {0} {1}&apos;.format(cls.CHANNEL_NAME, cls.CHANNELS)], cwd=&apos;../../envsetup&apos;, shell=True)
+
+testAuctionChaincode.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+popenargs = ([&apos;./generateCfgTrx.sh channel 2&apos;],), kwargs = {&apos;cwd&apos;: &apos;../../envsetup&apos;, &apos;shell&apos;: True}, process = &lt;subprocess.Popen object at 0x1097a61d0&gt;, output = &apos;&apos;
+unused_err = None, retcode = 1, cmd = [&apos;./generateCfgTrx.sh channel 2&apos;]
+
+    def check_output(*popenargs, **kwargs):
+        r&quot;&quot;&quot;Run command with arguments and return its output as a byte string.
+    
+        If the exit code was non-zero it raises a CalledProcessError.  The
+        CalledProcessError object will have the return code in the returncode
+        attribute and output in the output attribute.
+    
+        The arguments are the same as for the Popen constructor.  Example:
+    
+        &gt;&gt;&gt; check_output([&quot;ls&quot;, &quot;-l&quot;, &quot;/dev/null&quot;])
+        &apos;crw-rw-rw- 1 root root 1, 3 Oct 18  2007 /dev/null\n&apos;
+    
+        The stdout argument is not allowed as it is used internally.
+        To capture standard error in the result, use stderr=STDOUT.
+    
+        &gt;&gt;&gt; check_output([&quot;/bin/sh&quot;, &quot;-c&quot;,
+        ...               &quot;ls -l non_existent_file ; exit 0&quot;],
+        ...              stderr=STDOUT)
+        &apos;ls: non_existent_file: No such file or directory\n&apos;
+        &quot;&quot;&quot;
+        if &apos;stdout&apos; in kwargs:
+            raise ValueError(&apos;stdout argument not allowed, it will be overridden.&apos;)
+        process = Popen(stdout=PIPE, *popenargs, **kwargs)
+        output, unused_err = process.communicate()
+        retcode = process.poll()
+        if retcode:
+            cmd = kwargs.get(&quot;args&quot;)
+            if cmd is None:
+                cmd = popenargs[0]
+&gt;           raise CalledProcessError(retcode, cmd, output=output)
+E           CalledProcessError: Command &apos;[&apos;./generateCfgTrx.sh channel 2&apos;]&apos; returned non-zero exit status 1
+
+/Users/chalene/anaconda/envs/fabric/lib/python2.7/subprocess.py:219: CalledProcessError</error></testcase><testcase classname="testAuctionChaincode.ChaincodeAPI" file="testAuctionChaincode.py" line="128" name="test_FAB3934_8_Post_Items" time="0.000311851501465"><error message="test setup failure">cls = &lt;class &apos;testAuctionChaincode.ChaincodeAPI&apos;&gt;
+
+    @classmethod
+    def setUpClass(cls):
+        cls.CHANNEL_NAME = &apos;channel&apos;
+        cls.CHANNELS = &apos;2&apos;
+        cls.CHAINCODES = &apos;1&apos;
+        cls.ENDORSERS = &apos;4&apos;
+        cls.RUN_TIME_HOURS = &apos;1&apos;
+&gt;       check_output([&apos;./generateCfgTrx.sh {0} {1}&apos;.format(cls.CHANNEL_NAME, cls.CHANNELS)], cwd=&apos;../../envsetup&apos;, shell=True)
+
+testAuctionChaincode.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+popenargs = ([&apos;./generateCfgTrx.sh channel 2&apos;],), kwargs = {&apos;cwd&apos;: &apos;../../envsetup&apos;, &apos;shell&apos;: True}, process = &lt;subprocess.Popen object at 0x1097a61d0&gt;, output = &apos;&apos;
+unused_err = None, retcode = 1, cmd = [&apos;./generateCfgTrx.sh channel 2&apos;]
+
+    def check_output(*popenargs, **kwargs):
+        r&quot;&quot;&quot;Run command with arguments and return its output as a byte string.
+    
+        If the exit code was non-zero it raises a CalledProcessError.  The
+        CalledProcessError object will have the return code in the returncode
+        attribute and output in the output attribute.
+    
+        The arguments are the same as for the Popen constructor.  Example:
+    
+        &gt;&gt;&gt; check_output([&quot;ls&quot;, &quot;-l&quot;, &quot;/dev/null&quot;])
+        &apos;crw-rw-rw- 1 root root 1, 3 Oct 18  2007 /dev/null\n&apos;
+    
+        The stdout argument is not allowed as it is used internally.
+        To capture standard error in the result, use stderr=STDOUT.
+    
+        &gt;&gt;&gt; check_output([&quot;/bin/sh&quot;, &quot;-c&quot;,
+        ...               &quot;ls -l non_existent_file ; exit 0&quot;],
+        ...              stderr=STDOUT)
+        &apos;ls: non_existent_file: No such file or directory\n&apos;
+        &quot;&quot;&quot;
+        if &apos;stdout&apos; in kwargs:
+            raise ValueError(&apos;stdout argument not allowed, it will be overridden.&apos;)
+        process = Popen(stdout=PIPE, *popenargs, **kwargs)
+        output, unused_err = process.communicate()
+        retcode = process.poll()
+        if retcode:
+            cmd = kwargs.get(&quot;args&quot;)
+            if cmd is None:
+                cmd = popenargs[0]
+&gt;           raise CalledProcessError(retcode, cmd, output=output)
+E           CalledProcessError: Command &apos;[&apos;./generateCfgTrx.sh channel 2&apos;]&apos; returned non-zero exit status 1
+
+/Users/chalene/anaconda/envs/fabric/lib/python2.7/subprocess.py:219: CalledProcessError</error></testcase><testcase classname="testAuctionChaincode.ChaincodeAPI" file="testAuctionChaincode.py" line="138" name="test_FAB3934_9_Auction_Invoke" time="0.000320911407471"><error message="test setup failure">cls = &lt;class &apos;testAuctionChaincode.ChaincodeAPI&apos;&gt;
+
+    @classmethod
+    def setUpClass(cls):
+        cls.CHANNEL_NAME = &apos;channel&apos;
+        cls.CHANNELS = &apos;2&apos;
+        cls.CHAINCODES = &apos;1&apos;
+        cls.ENDORSERS = &apos;4&apos;
+        cls.RUN_TIME_HOURS = &apos;1&apos;
+&gt;       check_output([&apos;./generateCfgTrx.sh {0} {1}&apos;.format(cls.CHANNEL_NAME, cls.CHANNELS)], cwd=&apos;../../envsetup&apos;, shell=True)
+
+testAuctionChaincode.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+popenargs = ([&apos;./generateCfgTrx.sh channel 2&apos;],), kwargs = {&apos;cwd&apos;: &apos;../../envsetup&apos;, &apos;shell&apos;: True}, process = &lt;subprocess.Popen object at 0x1097a61d0&gt;, output = &apos;&apos;
+unused_err = None, retcode = 1, cmd = [&apos;./generateCfgTrx.sh channel 2&apos;]
+
+    def check_output(*popenargs, **kwargs):
+        r&quot;&quot;&quot;Run command with arguments and return its output as a byte string.
+    
+        If the exit code was non-zero it raises a CalledProcessError.  The
+        CalledProcessError object will have the return code in the returncode
+        attribute and output in the output attribute.
+    
+        The arguments are the same as for the Popen constructor.  Example:
+    
+        &gt;&gt;&gt; check_output([&quot;ls&quot;, &quot;-l&quot;, &quot;/dev/null&quot;])
+        &apos;crw-rw-rw- 1 root root 1, 3 Oct 18  2007 /dev/null\n&apos;
+    
+        The stdout argument is not allowed as it is used internally.
+        To capture standard error in the result, use stderr=STDOUT.
+    
+        &gt;&gt;&gt; check_output([&quot;/bin/sh&quot;, &quot;-c&quot;,
+        ...               &quot;ls -l non_existent_file ; exit 0&quot;],
+        ...              stderr=STDOUT)
+        &apos;ls: non_existent_file: No such file or directory\n&apos;
+        &quot;&quot;&quot;
+        if &apos;stdout&apos; in kwargs:
+            raise ValueError(&apos;stdout argument not allowed, it will be overridden.&apos;)
+        process = Popen(stdout=PIPE, *popenargs, **kwargs)
+        output, unused_err = process.communicate()
+        retcode = process.poll()
+        if retcode:
+            cmd = kwargs.get(&quot;args&quot;)
+            if cmd is None:
+                cmd = popenargs[0]
+&gt;           raise CalledProcessError(retcode, cmd, output=output)
+E           CalledProcessError: Command &apos;[&apos;./generateCfgTrx.sh channel 2&apos;]&apos; returned non-zero exit status 1
+
+/Users/chalene/anaconda/envs/fabric/lib/python2.7/subprocess.py:219: CalledProcessError</error></testcase></testsuite>

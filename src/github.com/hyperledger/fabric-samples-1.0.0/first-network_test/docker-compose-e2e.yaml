@@ -1,0 +1,174 @@
+# Copyright IBM Corp. All Rights Reserved.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+version: '2'
+
+networks:
+  byfn:
+services:
+  ca0:
+    image: hyperledger/fabric-ca
+    environment:
+      - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
+      - FABRIC_CA_SERVER_CA_NAME=ca-issuer
+      - FABRIC_CA_SERVER_TLS_ENABLED=true
+      - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.issuer.votingsys.com-cert.pem
+      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/54c0d4f4d1639a6e719de3c5a397160f220d80c21bf1eb69a630b161b5df22ec_sk
+    ports:
+      - "7054:7054"
+    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.issuer.votingsys.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/54c0d4f4d1639a6e719de3c5a397160f220d80c21bf1eb69a630b161b5df22ec_sk -b admin:adminpw -d'
+    volumes:
+      - ./crypto-config/peerOrganizations/issuer.votingsys.com/ca/:/etc/hyperledger/fabric-ca-server-config
+    container_name: ca_peerIssuer
+    networks:
+      - byfn
+
+  ca1:
+    image: hyperledger/fabric-ca
+    environment:
+      - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
+      - FABRIC_CA_SERVER_CA_NAME=ca-broker
+      - FABRIC_CA_SERVER_TLS_ENABLED=true
+      - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.broker.votingsys.com-cert.pem
+      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/56aac00dd7de746f13174dd58fcc90d60e1916590840142cb4f79324d6b28d87_sk
+    ports:
+      - "8054:7054"
+    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.broker.votingsys.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/56aac00dd7de746f13174dd58fcc90d60e1916590840142cb4f79324d6b28d87_sk -b admin:adminpw -d'
+    volumes:
+      - ./crypto-config/peerOrganizations/broker.votingsys.com/ca/:/etc/hyperledger/fabric-ca-server-config
+    container_name: ca_peerBroker
+    networks:
+      - byfn
+
+  ca2:
+    image: hyperledger/fabric-ca
+    environment:
+      - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
+      - FABRIC_CA_SERVER_CA_NAME=ca-client
+      - FABRIC_CA_SERVER_TLS_ENABLED=true
+      - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.client.votingsys.com-cert.pem
+      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/39251379f03c251fa057dfe47c6b905a9bd6d2eac21a359931fd647f8d128a01_sk
+    ports:
+      - "9054:7054"
+    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.client.votingsys.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/39251379f03c251fa057dfe47c6b905a9bd6d2eac21a359931fd647f8d128a01_sk -b admin:adminpw -d'
+    volumes:
+      - ./crypto-config/peerOrganizations/client.votingsys.com/ca/:/etc/hyperledger/fabric-ca-server-config
+    container_name: ca_peerClient
+    networks:
+      - byfn
+
+  ca3:
+    image: hyperledger/fabric-ca
+    environment:
+      - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
+      - FABRIC_CA_SERVER_CA_NAME=ca-hkex
+      - FABRIC_CA_SERVER_TLS_ENABLED=true
+      - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.hkex.votingsys.com-cert.pem
+      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/af9002af2c3b53f4228e61bae39c920210a407bd6d83eeac1d621938edd263f1_sk
+    ports:
+      - "10054:7054"
+    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.hkex.votingsys.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/af9002af2c3b53f4228e61bae39c920210a407bd6d83eeac1d621938edd263f1_sk -b admin:adminpw -d'
+    volumes:
+      - ./crypto-config/peerOrganizations/hkex.votingsys.com/ca/:/etc/hyperledger/fabric-ca-server-config
+    container_name: ca_peerHkex
+    networks:
+      - byfn
+
+  ca4:
+    image: hyperledger/fabric-ca
+    environment:
+      - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
+      - FABRIC_CA_SERVER_CA_NAME=ca-sfc
+      - FABRIC_CA_SERVER_TLS_ENABLED=true
+      - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.sfc.votingsys.com-cert.pem
+      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/615cd72793f412940b0ff9526bf5338b3de431cadbf783d524b3f58e212f48a2_sk
+    ports:
+      - "11054:7054"
+    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.sfc.votingsys.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/615cd72793f412940b0ff9526bf5338b3de431cadbf783d524b3f58e212f48a2_sk -b admin:adminpw -d'
+    volumes:
+      - ./crypto-config/peerOrganizations/sfc.votingsys.com/ca/:/etc/hyperledger/fabric-ca-server-config
+    container_name: ca_peerSfc
+    networks:
+      - byfn
+
+  orderer.votingsys.com:
+    extends:
+      file:   base/docker-compose-base.yaml
+      service: orderer.votingsys.com
+    container_name: orderer.votingsys.com
+    networks:
+      - byfn
+
+  orderer1.votingsys.com:
+    extends:
+      file:   base/docker-compose-base.yaml
+      service: orderer1.votingsys.com
+    container_name: orderer1.votingsys.com
+    networks:
+      - byfn
+
+  peer0.issuer.votingsys.com:
+    container_name: peer0.issuer.votingsys.com
+    extends:
+      file:  base/docker-compose-base.yaml
+      service: peer0.issuer.votingsys.com
+    networks:
+      - byfn
+
+  peer0.broker.votingsys.com:
+    container_name: peer0.broker.votingsys.com
+    extends:
+      file:  base/docker-compose-base.yaml
+      service: peer0.broker.votingsys.com
+    networks:
+      - byfn
+
+  peer1.broker.votingsys.com:
+    container_name: peer1.broker.votingsys.com
+    extends:
+      file:  base/docker-compose-base.yaml
+      service: peer1.broker.votingsys.com
+    networks:
+      - byfn
+
+  peer0.client.votingsys.com:
+    container_name: peer0.client.votingsys.com
+    extends:
+      file:  base/docker-compose-base.yaml
+      service: peer0.client.votingsys.com
+    networks:
+      - byfn
+
+  peer1.client.votingsys.com:
+    container_name: peer1.client.votingsys.com
+    extends:
+      file:  base/docker-compose-base.yaml
+      service: peer1.client.votingsys.com
+    networks:
+      - byfn
+
+  peer0.hkex.votingsys.com:
+    container_name: peer0.hkex.votingsys.com
+    extends:
+      file:  base/docker-compose-base.yaml
+      service: peer0.hkex.votingsys.com
+    networks:
+      - byfn
+
+  peer1.hkex.votingsys.com:
+    container_name: peer1.hkex.votingsys.com
+    extends:
+      file:  base/docker-compose-base.yaml
+      service: peer1.hkex.votingsys.com
+    networks:
+      - byfn
+
+  peer0.sfc.votingsys.com:
+    container_name: peer0.sfc.votingsys.com
+    extends:
+      file:  base/docker-compose-base.yaml
+      service: peer0.sfc.votingsys.com
+    networks:
+      - byfn

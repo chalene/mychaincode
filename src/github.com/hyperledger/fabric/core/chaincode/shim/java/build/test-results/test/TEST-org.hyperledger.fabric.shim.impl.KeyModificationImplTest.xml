@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.hyperledger.fabric.shim.impl.KeyModificationImplTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2017-07-18T03:43:17" hostname="Chalene-MacBook-Pro.local" time="0.06">
+  <properties/>
+  <testcase name="testGetValue" classname="org.hyperledger.fabric.shim.impl.KeyModificationImplTest" time="0.032"/>
+  <testcase name="testGetTxId" classname="org.hyperledger.fabric.shim.impl.KeyModificationImplTest" time="0.001"/>
+  <testcase name="testGetStringValue" classname="org.hyperledger.fabric.shim.impl.KeyModificationImplTest" time="0.001"/>
+  <testcase name="testGetTimestamp" classname="org.hyperledger.fabric.shim.impl.KeyModificationImplTest" time="0.018"/>
+  <testcase name="testIsDeleted" classname="org.hyperledger.fabric.shim.impl.KeyModificationImplTest" time="0.006"/>
+  <testcase name="testKeyModificationImpl" classname="org.hyperledger.fabric.shim.impl.KeyModificationImplTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

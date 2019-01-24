@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.hyperledger.fabric.shim.ledger.CompositeKeyTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2017-07-18T03:43:17" hostname="Chalene-MacBook-Pro.local" time="0.036">
+  <properties/>
+  <testcase name="testCompositeKeyWithInvalidAttributeDelimiter" classname="org.hyperledger.fabric.shim.ledger.CompositeKeyTest" time="0.003"/>
+  <testcase name="testParseCompositeKeyInvalidObjectType" classname="org.hyperledger.fabric.shim.ledger.CompositeKeyTest" time="0.009"/>
+  <testcase name="testGetObjectType" classname="org.hyperledger.fabric.shim.ledger.CompositeKeyTest" time="0.006"/>
+  <testcase name="testToString" classname="org.hyperledger.fabric.shim.ledger.CompositeKeyTest" time="0.0"/>
+  <testcase name="testParseCompositeKey" classname="org.hyperledger.fabric.shim.ledger.CompositeKeyTest" time="0.004"/>
+  <testcase name="testCompositeKeyStringListOfString" classname="org.hyperledger.fabric.shim.ledger.CompositeKeyTest" time="0.001"/>
+  <testcase name="testCompositeKeyWithInvalidObjectTypeMaxCodePoint" classname="org.hyperledger.fabric.shim.ledger.CompositeKeyTest" time="0.001"/>
+  <testcase name="testCompositeKeyWithInvalidObjectTypeDelimiter" classname="org.hyperledger.fabric.shim.ledger.CompositeKeyTest" time="0.001"/>
+  <testcase name="testCompositeKeyWithInvalidAttributeMaxCodePoint" classname="org.hyperledger.fabric.shim.ledger.CompositeKeyTest" time="0.001"/>
+  <testcase name="testCompositeKeyStringStringArray" classname="org.hyperledger.fabric.shim.ledger.CompositeKeyTest" time="0.001"/>
+  <testcase name="testParseCompositeKeyInvalidAttribute" classname="org.hyperledger.fabric.shim.ledger.CompositeKeyTest" time="0.001"/>
+  <testcase name="testGetAttributes" classname="org.hyperledger.fabric.shim.ledger.CompositeKeyTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

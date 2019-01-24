@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?><testsuite errors="0" failures="8" name="pytest" skips="8" tests="16" time="46.893"><testcase classname="ledger_lte.perf_goleveldb" file="ledger_lte.py" line="12" name="test_FAB_3790_VaryNumParallelTxPerChain" time="5.5543589592"><failure message="AssertionError: VaryNumParallelTxPerChain performance test failed. 
+Please check the logfile output_VaryNumParallelTxPerChain.log for more details.">self = &lt;ledger_lte.perf_goleveldb testMethod=test_FAB_3790_VaryNumParallelTxPerChain&gt;
+
+    def test_FAB_3790_VaryNumParallelTxPerChain(self):
+        &apos;&apos;&apos;
+             In this Performance test, we observe the performance (time to
+             complete a set number of Ledger operations) of the Ledger component,
+             with goleveldb as the state database. We vary the number of parallel
+             transactions per chain and observe the performance.
+    
+             Passing criteria: Underlying LTE test completed successfully with
+             exit code 0
+            &apos;&apos;&apos;
+        logfile = open(&quot;output_VaryNumParallelTxPerChain.log&quot;, &quot;w&quot;)
+        returncode = subprocess.call(
+                &quot;./runbenchmarks.sh -f parameters_daily_CI.sh varyNumParallelTxPerChain&quot;,
+                shell=True, stderr=subprocess.STDOUT, stdout=logfile,
+                cwd=tool_directory)
+        logfile.close()
+        self.assertEqual(returncode, 0, msg=&quot;VaryNumParallelTxPerChain &quot;
+                &quot;performance test failed. \nPlease check the logfile &quot;
+&gt;               +logfile.name+&quot; for more details.&quot;)
+E       AssertionError: VaryNumParallelTxPerChain performance test failed. 
+E       Please check the logfile output_VaryNumParallelTxPerChain.log for more details.
+
+ledger_lte.py:31: AssertionError</failure></testcase><testcase classname="ledger_lte.perf_goleveldb" file="ledger_lte.py" line="32" name="test_FAB_3795_VaryNumChains" time="5.68956685066"><failure message="AssertionError: VaryNumChains performance test failed. 
+Please check the logfile output_VaryNumChains.log for more details.">self = &lt;ledger_lte.perf_goleveldb testMethod=test_FAB_3795_VaryNumChains&gt;
+
+    def test_FAB_3795_VaryNumChains(self):
+        &apos;&apos;&apos;
+             In this Performance test, we observe the performance (time to
+             complete a set number of Ledger operations) of the Ledger component,
+             with goleveldb as the state database. We vary the number of chains
+             (ledgers).
+    
+             Passing criteria: Underlying LTE test completed successfully with
+             exit code 0
+            &apos;&apos;&apos;
+        logfile = open(&quot;output_VaryNumChains.log&quot;, &quot;w&quot;)
+        returncode = subprocess.call(
+                &quot;./runbenchmarks.sh -f parameters_daily_CI.sh varyNumChains&quot;,
+                shell=True, stderr=subprocess.STDOUT, stdout=logfile,
+                cwd=tool_directory)
+        logfile.close()
+        self.assertEqual(returncode, 0, msg=&quot;VaryNumChains performance test&quot;
+&gt;               &quot; failed. \nPlease check the logfile &quot;+logfile.name+&quot; for more &quot;
+                &quot;details.&quot;)
+E       AssertionError: VaryNumChains performance test failed. 
+E       Please check the logfile output_VaryNumChains.log for more details.
+
+ledger_lte.py:50: AssertionError</failure></testcase><testcase classname="ledger_lte.perf_goleveldb" file="ledger_lte.py" line="52" name="test_FAB_3798_VaryNumParallelTxWithSingleChain" time="6.41744422913"><failure message="AssertionError: VaryNumParallelTxWithSingleChain performance test failed. 
+Please check the logfile output_VaryNumParallelTxWithSingleChain.log for more details.">self = &lt;ledger_lte.perf_goleveldb testMethod=test_FAB_3798_VaryNumParallelTxWithSingleChain&gt;
+
+    def test_FAB_3798_VaryNumParallelTxWithSingleChain(self):
+        &apos;&apos;&apos;
+             In this Performance test, we observe the performance (time to
+             complete a set number of Ledger operations) of the Ledger component,
+             with goleveldb as the state database. We vary the number of parallel
+             transactions on a single chain.
+    
+             Passing criteria: Underlying LTE test completed successfully with
+             exit code 0
+            &apos;&apos;&apos;
+        logfile = open(&quot;output_VaryNumParallelTxWithSingleChain.log&quot;, &quot;w&quot;)
+        returncode = subprocess.call(
+                &quot;./runbenchmarks.sh -f parameters_daily_CI.sh varyNumParallelTxWithSingleChain&quot;,
+                shell=True, stderr=subprocess.STDOUT, stdout=logfile,
+                cwd=tool_directory)
+        logfile.close()
+        self.assertEqual(returncode, 0, msg=&quot;VaryNumParallelTxWithSingleChain &quot;
+                &quot;performance test failed. \nPlease check the logfile &quot;
+&gt;               +logfile.name+&quot; for more details.&quot;)
+E       AssertionError: VaryNumParallelTxWithSingleChain performance test failed. 
+E       Please check the logfile output_VaryNumParallelTxWithSingleChain.log for more details.
+
+ledger_lte.py:71: AssertionError</failure></testcase><testcase classname="ledger_lte.perf_goleveldb" file="ledger_lte.py" line="72" name="test_FAB_3799_VaryNumChainsWithNoParallelism" time="6.11547899246"><failure message="AssertionError: varyNumChainsWithNoParallelism performance test failed. 
+Please check the logfile output_VaryNumChainsWithNoParallelism.log for more details.">self = &lt;ledger_lte.perf_goleveldb testMethod=test_FAB_3799_VaryNumChainsWithNoParallelism&gt;
+
+    def test_FAB_3799_VaryNumChainsWithNoParallelism(self):
+        &apos;&apos;&apos;
+             In this Performance test, we observe the performance (time to
+             complete a set number of Ledger operations) of the Ledger component,
+             with goleveldb as the state database. We vary the number of chains
+             without any parallelism within a single chain.
+    
+             Passing criteria: Underlying LTE test completed successfully with
+             exit code 0
+            &apos;&apos;&apos;
+        logfile = open(&quot;output_VaryNumChainsWithNoParallelism.log&quot;, &quot;w&quot;)
+        returncode = subprocess.call(
+                &quot;./runbenchmarks.sh -f parameters_daily_CI.sh varyNumChainsWithNoParallelism&quot;,
+                shell=True, stderr=subprocess.STDOUT, stdout=logfile,
+                cwd=tool_directory)
+        logfile.close()
+        self.assertEqual(returncode, 0, msg=&quot;varyNumChainsWithNoParallelism &quot;
+                &quot;performance test failed. \nPlease check the logfile &quot;
+&gt;               +logfile.name+&quot; for more details.&quot;)
+E       AssertionError: varyNumChainsWithNoParallelism performance test failed. 
+E       Please check the logfile output_VaryNumChainsWithNoParallelism.log for more details.
+
+ledger_lte.py:91: AssertionError</failure></testcase><testcase classname="ledger_lte.perf_goleveldb" file="ledger_lte.py" line="131" name="test_FAB_3800_VaryNumKeysInEachTx" time="5.48172211647"><failure message="AssertionError: varyNumKeysInEachTx performance test failed. 
+Please check the logfile output_VaryNumKeysInEachTx.log for more details.">self = &lt;ledger_lte.perf_goleveldb testMethod=test_FAB_3800_VaryNumKeysInEachTx&gt;
+
+    def test_FAB_3800_VaryNumKeysInEachTx(self):
+        &apos;&apos;&apos;
+             In this Performance test, we observe the performance (time to
+             complete a set number of Ledger operations) of the Ledger component,
+             with goleveldb as the state database. We vary the number of keys in
+             each transaction.
+    
+             Passing criteria: Underlying LTE test completed successfully with
+             exit code 0
+            &apos;&apos;&apos;
+        logfile = open(&quot;output_VaryNumKeysInEachTx.log&quot;, &quot;w&quot;)
+        returncode = subprocess.call(
+                &quot;./runbenchmarks.sh -f parameters_daily_CI.sh varyNumKeysInEachTx&quot;,
+                shell=True, stderr=subprocess.STDOUT, stdout=logfile,
+                cwd=tool_directory)
+        logfile.close()
+        self.assertEqual(returncode, 0, msg=&quot;varyNumKeysInEachTx performance &quot;
+                &quot;test failed. \nPlease check the logfile &quot;+logfile.name
+&gt;               +&quot; for more details.&quot;)
+E       AssertionError: varyNumKeysInEachTx performance test failed. 
+E       Please check the logfile output_VaryNumKeysInEachTx.log for more details.
+
+ledger_lte.py:150: AssertionError</failure></testcase><testcase classname="ledger_lte.perf_goleveldb" file="ledger_lte.py" line="92" name="test_FAB_3801_VaryKVSize" time="5.99820113182"><failure message="AssertionError: varyKVSize performance test failed. 
+Please check the logfile output_VaryKVSize.log for more details.">self = &lt;ledger_lte.perf_goleveldb testMethod=test_FAB_3801_VaryKVSize&gt;
+
+    def test_FAB_3801_VaryKVSize(self):
+        &apos;&apos;&apos;
+             In this Performance test, we observe the performance (time to
+             complete a set number of Ledger operations) of the Ledger component,
+             with goleveldb as the state database. We vary the size of key-value.
+    
+             Passing criteria: Underlying LTE test completed successfully with
+             exit code 0
+            &apos;&apos;&apos;
+        logfile = open(&quot;output_VaryKVSize.log&quot;, &quot;w&quot;)
+        returncode = subprocess.call(
+                &quot;./runbenchmarks.sh -f parameters_daily_CI.sh varyKVSize&quot;,
+                shell=True, stderr=subprocess.STDOUT, stdout=logfile,
+                cwd=tool_directory)
+        logfile.close()
+        self.assertEqual(returncode, 0, msg=&quot;varyKVSize performance test&quot;
+&gt;               &quot; failed. \nPlease check the logfile &quot;+logfile.name+&quot; for more &quot;
+                &quot;details.&quot;)
+E       AssertionError: varyKVSize performance test failed. 
+E       Please check the logfile output_VaryKVSize.log for more details.
+
+ledger_lte.py:109: AssertionError</failure></testcase><testcase classname="ledger_lte.perf_goleveldb" file="ledger_lte.py" line="111" name="test_FAB_3802_VaryBatchSize" time="5.73049402237"><failure message="AssertionError: varyBatchSize performance test failed. 
+Please check the logfile output_VaryBatchSize.log for more details.">self = &lt;ledger_lte.perf_goleveldb testMethod=test_FAB_3802_VaryBatchSize&gt;
+
+    def test_FAB_3802_VaryBatchSize(self):
+        &apos;&apos;&apos;
+             In this Performance test, we observe the performance (time to
+             complete a set number of Ledger operations) of the Ledger component,
+             with goleveldb as the state database. We vary the value of the batch
+             size
+    
+             Passing criteria: Underlying LTE test completed successfully with
+             exit code 0
+            &apos;&apos;&apos;
+        logfile = open(&quot;output_VaryBatchSize.log&quot;, &quot;w&quot;)
+        returncode = subprocess.call(
+                &quot;./runbenchmarks.sh -f parameters_daily_CI.sh varyBatchSize&quot;,
+                shell=True, stderr=subprocess.STDOUT, stdout=logfile,
+                cwd=tool_directory)
+        logfile.close()
+        self.assertEqual(returncode, 0, msg=&quot;varyBatchSize performance test&quot;
+&gt;               &quot; failed. \nPlease check the logfile &quot;+logfile.name+&quot; for more &quot;
+                &quot;details.&quot;)
+E       AssertionError: varyBatchSize performance test failed. 
+E       Please check the logfile output_VaryBatchSize.log for more details.
+
+ledger_lte.py:129: AssertionError</failure></testcase><testcase classname="ledger_lte.perf_goleveldb" file="ledger_lte.py" line="151" name="test_FAB_3803_VaryNumTxs" time="5.79559826851"><failure message="AssertionError: varyNumTxs performance test failed. 
+Please check the logfile output_VaryNumTxs.log for more details.">self = &lt;ledger_lte.perf_goleveldb testMethod=test_FAB_3803_VaryNumTxs&gt;
+
+    def test_FAB_3803_VaryNumTxs(self):
+        &apos;&apos;&apos;
+             In this Performance test, we observe the performance (time to
+             complete a set number of Ledger operations) of the Ledger component,
+             with goleveldb as the state database. We vary the number of
+             transactions carried out.
+    
+             Passing criteria: Underlying LTE test completed successfully with
+             exit code 0
+            &apos;&apos;&apos;
+        logfile = open(&quot;output_VaryNumTxs.log&quot;, &quot;w&quot;)
+        returncode = subprocess.call(
+                &quot;./runbenchmarks.sh -f parameters_daily_CI.sh varyNumTxs&quot;,
+                shell=True, stderr=subprocess.STDOUT, stdout=logfile,
+                cwd=tool_directory)
+        logfile.close()
+        self.assertEqual(returncode, 0, msg=&quot;varyNumTxs performance test&quot;
+&gt;               &quot; failed. \nPlease check the logfile &quot;+logfile.name+&quot; for more &quot;
+                &quot;details.&quot;)
+E       AssertionError: varyNumTxs performance test failed. 
+E       Please check the logfile output_VaryNumTxs.log for more details.
+
+ledger_lte.py:169: AssertionError</failure></testcase><testcase classname="ledger_lte.perf_couchdb" file="../../../../../../../../anaconda/envs/fabric/lib/python2.7/unittest/case.py" line="59" name="test_FAB_3870_VaryNumParallelTxPerChain" time="0.000488042831421"><skipped message="WIP, skipping" type="pytest.skip">../../../../../../../../anaconda/envs/fabric/lib/python2.7/unittest/case.py:59: &lt;py._xmlgen.raw object at 0x102c06f10&gt;</skipped></testcase><testcase classname="ledger_lte.perf_couchdb" file="../../../../../../../../anaconda/envs/fabric/lib/python2.7/unittest/case.py" line="59" name="test_FAB_3871_VaryNumChain" time="0.000403165817261"><skipped message="WIP, skipping" type="pytest.skip">../../../../../../../../anaconda/envs/fabric/lib/python2.7/unittest/case.py:59: &lt;py._xmlgen.raw object at 0x102c064d0&gt;</skipped></testcase><testcase classname="ledger_lte.perf_couchdb" file="../../../../../../../../anaconda/envs/fabric/lib/python2.7/unittest/case.py" line="59" name="test_FAB_3872_VaryNumParallelTxWithSingleChain" time="0.000387191772461"><skipped message="WIP, skipping" type="pytest.skip">../../../../../../../../anaconda/envs/fabric/lib/python2.7/unittest/case.py:59: &lt;py._xmlgen.raw object at 0x102c00690&gt;</skipped></testcase><testcase classname="ledger_lte.perf_couchdb" file="../../../../../../../../anaconda/envs/fabric/lib/python2.7/unittest/case.py" line="59" name="test_FAB_3873_VaryNumChainWithNoParallelism" time="0.000375032424927"><skipped message="WIP, skipping" type="pytest.skip">../../../../../../../../anaconda/envs/fabric/lib/python2.7/unittest/case.py:59: &lt;py._xmlgen.raw object at 0x102d28b50&gt;</skipped></testcase><testcase classname="ledger_lte.perf_couchdb" file="../../../../../../../../anaconda/envs/fabric/lib/python2.7/unittest/case.py" line="59" name="test_FAB_3874_VaryKVSize" time="0.000370979309082"><skipped message="WIP, skipping" type="pytest.skip">../../../../../../../../anaconda/envs/fabric/lib/python2.7/unittest/case.py:59: &lt;py._xmlgen.raw object at 0x102c003d0&gt;</skipped></testcase><testcase classname="ledger_lte.perf_couchdb" file="../../../../../../../../anaconda/envs/fabric/lib/python2.7/unittest/case.py" line="59" name="test_FAB_3875_VaryBatchSize" time="0.000334739685059"><skipped message="WIP, skipping" type="pytest.skip">../../../../../../../../anaconda/envs/fabric/lib/python2.7/unittest/case.py:59: &lt;py._xmlgen.raw object at 0x102c06c50&gt;</skipped></testcase><testcase classname="ledger_lte.perf_couchdb" file="../../../../../../../../anaconda/envs/fabric/lib/python2.7/unittest/case.py" line="59" name="test_FAB_3876_VaryNumKeysInEachTX" time="0.000449895858765"><skipped message="WIP, skipping" type="pytest.skip">../../../../../../../../anaconda/envs/fabric/lib/python2.7/unittest/case.py:59: &lt;py._xmlgen.raw object at 0x102c06990&gt;</skipped></testcase><testcase classname="ledger_lte.perf_couchdb" file="../../../../../../../../anaconda/envs/fabric/lib/python2.7/unittest/case.py" line="59" name="test_FAB_3877_VaryNumTxs" time="0.000391244888306"><skipped message="WIP, skipping" type="pytest.skip">../../../../../../../../anaconda/envs/fabric/lib/python2.7/unittest/case.py:59: &lt;py._xmlgen.raw object at 0x102d28c90&gt;</skipped></testcase></testsuite>
